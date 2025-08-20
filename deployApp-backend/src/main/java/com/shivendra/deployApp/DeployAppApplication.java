@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.shivendra.deployApp.repository")
 @EntityScan("com.shivendra.deployApp.model")
 public class DeployAppApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(DeployAppApplication.class, args);
 	}
