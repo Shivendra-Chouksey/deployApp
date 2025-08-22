@@ -1,0 +1,30 @@
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:  # Manual trigger for testing
+
+jobs:
+  test:
+    runs-on: self-hosted
+    
+    steps:
+    - name: Hello from EC2
+      run: |
+        echo "🎉 Hello from your EC2 instance!"
+        echo "Runner name: $(hostname)"
+        echo "Current directory: $(pwd)"
+        echo "Current user: $(whoami)"
+        echo "Date: $(date)"
+        
+    - name: Check System Info
+      run: |
+        echo "=== System Information ==="
+        uname -a
+        echo "=== Memory ==="
+        free -h
+        echo "=== Disk ==="
+        df -h
+        echo "=== Java Version ==="
+        java -version
+        echo "=== Node Version ==="
+        node --version
